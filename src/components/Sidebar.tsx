@@ -4,12 +4,13 @@ import InputBase from '@mui/material/InputBase';
 import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
 import {useState} from "react";
-import {useAppDispatch} from "../app/hooks";
-import {fetchProductsAsync} from "../features/products/productsSlice";
+import {useAppDispatch, useAppSelector} from "../app/hooks";
+import {fetchProductsAsync, selectLoading} from "../features/products/productsSlice";
 
 const Sidebar = () => {
     const [searchValue, setSearchValue] = useState('');
     const dispatch = useAppDispatch();
+    const loading = useAppSelector(selectLoading)
 
     const handleClick = () => {
         if (!searchValue) {
@@ -30,7 +31,7 @@ const Sidebar = () => {
                     onChange={e => setSearchValue(e.target.value)}
                     inputProps={{'aria-label': 'search products'}}
                 />
-                <IconButton sx={{p: '10px'}} aria-label="search" onClick={handleClick}>
+                <IconButton sx={{p: '10px'}} aria-label="search" onClick={handleClick} disabled={loading}>
                     <SearchIcon/>
                 </IconButton>
             </Paper>
