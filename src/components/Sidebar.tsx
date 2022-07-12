@@ -28,6 +28,7 @@ const Sidebar = () => {
                 <InputBase
                     sx={{ml: 1, flex: 1}}
                     placeholder="Search for products"
+                    value={searchValue}
                     onChange={e => setSearchValue(e.target.value)}
                     inputProps={{'aria-label': 'search products'}}
                 />
