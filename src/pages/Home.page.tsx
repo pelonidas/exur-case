@@ -1,5 +1,6 @@
 import React from 'react';
 import Sidebar from "../components/Sidebar";
+import {ProductOverview} from "../features/products/ProductOverview";
 
 function HomePage() {
     return (
@@ -9,6 +10,7 @@ function HomePage() {
                 <div className={'w-[70%]'}>
                     <h1 className={'text-[2rem] font-medium text-blue-600'}>Lorem ipsum dolor sit amet, consectetur
                         adipisicing elit. Cupiditate, placeat.</h1>
+                    <ProductOverview/>
                 </div>
             </div>
         </div>

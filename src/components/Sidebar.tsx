@@ -16,6 +16,7 @@ const Sidebar = () => {
             return;
         }
         dispatch(fetchProductsAsync(searchValue));
+        setSearchValue('');
     }
     return (
         <div className={'w-[30%]'}>

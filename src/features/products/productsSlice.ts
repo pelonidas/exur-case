@@ -1,10 +1,16 @@
-import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { RootState } from '../../app/store';
 import axios from "axios";
 
-export interface ProductsState {
+interface Product {
+  id: number,
+  reason: string,
+  name: string,
+}
+
+interface ProductsState {
   loading: boolean;
-  products: string[]
+  products: Product[]
 }
 
 const initialState: ProductsState = {
@@ -46,9 +52,9 @@ export const productsSlice = createSlice({
       .addCase(fetchProductsAsync.pending, (state) => {
         state.loading = true;
       })
-      .addCase(fetchProductsAsync.fulfilled, (state, action: PayloadAction<string[]>) => {
+      .addCase(fetchProductsAsync.fulfilled, (state, action) => {
         state.loading = false;
-        state.products = action.payload;
+        state.products = action.payload.results;
       })
       .addCase(fetchProductsAsync.rejected, (state) => {
         state.loading = false
