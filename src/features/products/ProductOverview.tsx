@@ -1,4 +1,4 @@
-import React, {MouseEventHandler, useEffect, useState} from 'react';
+import React from 'react';
 
 import {useAppSelector} from '../../app/hooks';
 import {selectProducts} from './productsSlice';
