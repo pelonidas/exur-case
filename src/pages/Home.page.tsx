@@ -4,10 +4,10 @@ import {ProductOverview} from "../features/products/ProductOverview";
 
 function HomePage() {
     return (
-        <div className={'bg-[#FBFBFB] h-screen'}>
-            <div className={'font-primary flex gap-[5%] pt-[5rem] mx-[1rem] '}>
+        <div className={'bg-[#FBFBFB] md:h-screen'}>
+            <div className={'font-primary flex flex-col md:flex-row gap-[5%] py-[2rem] md:py-[5rem] px-[1rem] '}>
                 <Sidebar/>
-                <div className={'w-[70%]'}>
+                <div className={'mt-[2rem] md:mt-0 md:w-[70%]'}>
                     <h1 className={'text-[2rem] font-medium text-blue-600'}>Lorem ipsum dolor sit amet, consectetur
                         adipisicing elit. Cupiditate, placeat.</h1>
                     <p className={'mt-[2rem]'}>

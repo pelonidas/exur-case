@@ -20,10 +20,10 @@ const Sidebar = () => {
         setSearchValue('');
     }
     return (
-        <div className={'w-[30%]'}>
+        <div className={'md:w-[30%]'}>
             <Paper
                 component="form"
-                sx={{p: '2px 4px', display: 'flex', alignItems: 'center', width: 400}}
+                sx={{p: '2px 4px', display: 'flex', alignItems: 'center', width: '100%'}}
             >
                 <InputBase
                     sx={{ml: 1, flex: 1}}
